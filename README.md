@@ -17,17 +17,13 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
+Real-world recommenders (like Spotify or Netflix) work by turning both the items and the user into data, then measuring how well they match. They generally use two big strategies: content-based filtering, which compares an item's attributes (genre, mood, tempo, etc.) directly against a user's stated or inferred preferences, and collaborative filtering, which looks at patterns across many users to guess "people similar to you also liked this." Real systems usually blend both, plus signals like recency, popularity, and past engagement (skips, replays, likes) to keep refining the match over time.
 
-Some prompts to answer:
+My version is a simplified, content-based recommender. It does not learn from other users or from listening history, it only compares each song's attributes against one user's stated taste profile. I'm prioritizing three features that matter most for "does this song fit what the user is looking for right now": **genre**, **mood**, and **energy**. Each song gets a score built from how well it matches on these three dimensions, and the highest-scoring songs are ranked and returned as recommendations.
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
-
-You can include a simple diagram or bullet list if helpful.
+- **`Song`** features used: `genre`, `mood`, `energy` 
+- **`UserProfile`** features used: `favorite_genre`, `favorite_mood`, `target_energy`
+- The `Recommender` scores each song by combining a genre match, a mood match, and a distance-based energy score (closer to `target_energy` = higher score), then ranks songs by total score and returns the top `k`.
 
 ---
 
@@ -68,15 +64,27 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Sample Recommendation Output
 
-Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
+Output from running `python -m src.main` with the starter profile (`genre=pop, mood=happy, energy=0.8`):
 
 ```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
+Loading songs from data/songs.csv...
+
+Top recommendations:
+
+Sunrise City - Score: 3.98
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+0.98)
+
+Gym Hero - Score: 2.87
+Because: genre match (+2.0), energy similarity (+0.87)
+
+Rooftop Lights - Score: 1.96
+Because: mood match (+1.0), energy similarity (+0.96)
+
+Concrete Kingdom - Score: 1.00
+Because: energy similarity (+1.00)
+
+Night Drive Loop - Score: 0.95
+Because: energy similarity (+0.95)
 ```
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->

@@ -9,3 +9,11 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Concrete Kingdom,MC Ledger,hip hop,triumphant,0.80,95,0.72,0.85,0.08
+12,Autumn Letters,Wren & Sable,folk,nostalgic,0.33,84,0.55,0.44,0.90
+13,Velvet Whisper,Lena Cortez,R&B,romantic,0.52,70,0.68,0.61,0.40
+14,Iron Cathedral,Grim Voltage,metal,angry,0.97,168,0.30,0.55,0.03
+15,Dust Road Home,Silas Grey,country,melancholic,0.45,100,0.42,0.50,0.65
+16,Neon Pulse Rave,Kilowatt,electronic,euphoric,0.88,128,0.80,0.90,0.05
+17,Golden Hour Sway,Marisol Bay,reggae,relaxed,0.48,88,0.75,0.70,0.45
+18,Moonlit Sonata Dreams,Elias Fenwick,classical,dreamy,0.22,64,0.58,0.28,0.95
