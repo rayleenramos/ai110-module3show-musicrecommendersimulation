@@ -64,11 +64,11 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Sample Recommendation Output
 
-Output from running `python -m src.main` with the starter profile (`genre=pop, mood=happy, energy=0.8`):
+Output from running `python -m src.main`, which loops through three distinct example profiles defined in `USER_PROFILES`:
+
+### High-Energy Pop (`genre=pop, mood=happy, energy=0.8`)
 
 ```
-Loading songs from data/songs.csv...
-
 Top recommendations:
 
 Sunrise City - Score: 3.98
@@ -85,6 +85,48 @@ Because: energy similarity (+1.00)
 
 Night Drive Loop - Score: 0.95
 Because: energy similarity (+0.95)
+```
+
+### Chill Lofi (`genre=lofi, mood=chill, energy=0.35`)
+
+```
+Top recommendations:
+
+Library Rain - Score: 4.00
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+1.00)
+
+Midnight Coding - Score: 3.93
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+0.93)
+
+Focus Flow - Score: 2.95
+Because: genre match (+2.0), energy similarity (+0.95)
+
+Spacewalk Thoughts - Score: 1.93
+Because: mood match (+1.0), energy similarity (+0.93)
+
+Coffee Shop Stories - Score: 0.98
+Because: energy similarity (+0.98)
+```
+
+### Deep Intense Rock (`genre=rock, mood=intense, energy=0.9`)
+
+```
+Top recommendations:
+
+Storm Runner - Score: 3.99
+Because: genre match (+2.0), mood match (+1.0), energy similarity (+0.99)
+
+Gym Hero - Score: 1.97
+Because: mood match (+1.0), energy similarity (+0.97)
+
+Neon Pulse Rave - Score: 0.98
+Because: energy similarity (+0.98)
+
+Iron Cathedral - Score: 0.93
+Because: energy similarity (+0.93)
+
+Sunrise City - Score: 0.92
+Because: energy similarity (+0.92)
 ```
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
